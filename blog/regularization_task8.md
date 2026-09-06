@@ -10,6 +10,8 @@ To stop the computer from just memorizing, we use special helper tricks called r
 
 Here is how they work:
 
+
+
 # 1. L1 Regularization (Lasso / The Backpack Rule)
 
 Imagine you are packing a backpack for a trip, but you have to pay a toy tax for every single toy you pack. To save money, you decide to completely throw out the useless toys (like a broken crayon or a random rock) and only keep the absolute most important things. This makes your backpack light, simple, and easy to carry.
@@ -19,10 +21,10 @@ A regularization method that adds a penalty equal to the sum of the absolute val
 
  $$\text{Loss} = \text{Original Loss} + \lambda \sum |w_i|$$ 
 
- Because the absolute value penalty creates a sharp constraint, it tends to drive some weights exactly to zero. This mathematically removes those features from the model, making L1 an automatic method for feature selection
+ Because the absolute value penalty creates a sharp constraint, it tends to drive some weights exactly to zero. This mathematically removes those features from the model, making L1 an automatic method for feature selection.
 
 ## How it works: 
-It places a tax proportional to the absolute weight of each item, pushing unnecessary features all the way to zero (throwing useless toys completely out of the backpack)
+It places a tax proportional to the absolute weight of each item, pushing unnecessary features all the way to zero (throwing useless toys completely out of the backpack).
 
 ## Pros:
 Automatically performs feature selection by removing irrelevant inputs
@@ -35,9 +37,9 @@ Highly sensitive to extreme outliers
 May sacrifice overall accuracy just to achieve a simpler, sparse model
 
 ## Where to Use: 
-When you have high-dimensional data with many features and suspect only a few are actually important
+When you have high-dimensional data with many features and suspect only a few are actually important.
 ## Where NOT to Use: 
-When your features are highly correlated and you cannot afford to have similar variables arbitrarily discarded
+When your features are highly correlated and you cannot afford to have similar variables arbitrarily discarded.
 
 
 
@@ -50,10 +52,10 @@ A regularization method that adds a penalty equal to the sum of the squared valu
 
 $$\text{Loss} = \text{Original Loss} + \lambda \sum (w_i)^2$$ 
 
-Known as weight decay, it gradually penalizes large weights and decays them toward zero2. However, because the penalty for tiny weights is incredibly small, L2 never reduces weights to exactly zero2—it keeps all features but minimizes their overall influence27
+Known as weight decay, it gradually penalizes large weights and decays them toward zero. However, because the penalty for tiny weights is incredibly small, L2 never reduces weights to exactly zero2—it keeps all features but minimizes their overall influence.
 
 ## How it works: 
-It places a tax proportional to the square of each item's weight, shrinking all features to be as small as possible but never removing them entirely (shrinking all toys to a tiny size)
+It places a tax proportional to the square of each item's weight, shrinking all features to be as small as possible but never removing them entirely (shrinking all toys to a tiny size).
  
 ## Pros:
 Handles correlated features exceptionally well
@@ -65,9 +67,9 @@ No automatic feature selection—it retains every single feature, which can be c
 Highly complex and less interpretable since no inputs are actually eliminated
 
 ## Where to Use: 
-This is your safe, default choice for most machine learning problems, especially when you have many features that are all potentially relevant
+This is your safe, default choice for most machine learning problems, especially when you have many features that are all potentially relevant.
 ## Where NOT to Use: 
-When your dataset has thousands of features and you need a simpler, faster model with strict feature selection
+When your dataset has thousands of features and you need a simpler, faster model with strict feature selection.
 
 
 
@@ -79,7 +81,7 @@ Imagine you are training a sports team, but at every practice, you randomly make
 A technique designed for deep neural networks where, during each training step, individual neurons are randomly "dropped" (temporarily set to zero) with a pre-defined probability $p. This prevents neurons from co-adapting (becoming overly dependent on each other) and forces the network to learn robust, redundant representations.
 
 ## How it works: 
-During neural network training, it randomly disables a portion of the neurons (benching players) so the network cannot rely on any single superstar neuron
+During neural network training, it randomly disables a portion of the neurons (benching players) so the network cannot rely on any single superstar neuron.
  
 ## Pros:
 Incredibly powerful at stopping overfitting in deep networks
@@ -92,9 +94,9 @@ Makes it harder to interpret what individual neurons have learned
 Less effective on convolutional layers than dense layers
 
 ## Where to Use: 
-Training deep neural networks, especially those with large, dense, fully connected layers
+Training deep neural networks, especially those with large, dense, fully connected layers.
 ## Where NOT to Use: 
-Traditional machine learning models (like regression or decision trees) or on convolutional neural network layers where its impact is weaker
+Traditional machine learning models (like regression or decision trees) or on convolutional neural network layers where its impact is weaker.
 
 
 
@@ -107,7 +109,7 @@ Now you have tons of pictures, and you can recognize your friend anywhere.
 A process of artificially expanding the size of a training dataset by applying meaning-preserving transformations to existing data. For images, this involves manipulations like horizontal flips, rotations, zoom modifications, and changes to brightness or contrast. For text, it includes swapping words with synonyms or utilizing back-translation
 
 ## How it works: 
-It takes your existing training data and applies small, realistic changes—like rotating pictures or replacing words with synonyms—to artificially grow your dataset
+It takes your existing training data and applies small, realistic changes—like rotating pictures or replacing words with synonyms—to artificially grow your dataset.
 
 ## Pros:
 Increases your dataset size for free without collecting new data
@@ -120,22 +122,21 @@ Risk of creating unrealistic data if the changes are too aggressive
 Risk of breaking label integrity (e.g., rotating a handwritten number '6' so much that it turns into a '9')
 
 ## Where to Use: 
-Almost every computer vision task (images), and increasingly in audio processing and natural language processing (NLP)
+Almost every computer vision task (images), and increasingly in audio processing and natural language processing (NLP).
 ## Where NOT to Use: 
-When the transformations you apply distort the data's fundamental meaning or create unrealistic examples
+When the transformations you apply distort the data's fundamental meaning or create unrealistic examples.
 
 
 
 # 5. Early Stopping (Checking the Oven)
 
-Imagine baking yummy cookies. If you take them out too fast, they are unbaked. If you leave them in too long, they get burned
-This trick is like watching the oven closely and pulling the cookies out the exact second they are perfectly baked.
+Imagine baking yummy cookies. If you take them out too fast, they are unbaked. If you leave them in too long, they get burned. This trick is like watching the oven closely and pulling the cookies out the exact second they are perfectly baked.
 
 ## Technical Definition: 
 An implicit regularization method that monitors the model's performance on a separate, unseen validation dataset throughout the training process. Training is stopped at the precise epoch when validation performance ceases to improve (or begins to degrade), even if the training loss is still going down. This prevents the model from beginning to overfit to the noise in the training set.
 
 ## How it works: 
-It watches the model's performance on a separate validation set and halts training the exact second that performance stops improving
+It watches the model's performance on a separate validation set and halts training the exact second that performance stops improving.
 
 ## Pros:
 Extremely simple to use and costs almost nothing computationally
