@@ -4,4 +4,5 @@
 
 ## Hi there 👋
 
-- Optimization - Task 15 Blog Post link :  https://github.com/fs-dlh/fs-dlh/blob/main/blog/optimization_task15.md
+- Optimization - Task 15 Blog Post link :  https://github.com/fs-dlh/fs-dlh.github.io/blog/optimization_task15.md
+- Regularization - Task 8 Blog Post link :  https://github.com/fs-dlh/fs-dlh.github.io/blog/regularization_task8.md
