@@ -1,6 +1,6 @@
 # fs-dlh 
 
-![Eagle Owl](https://example.com/path/to/your/owl-image.jpg)
+![Eagle Owl]((https://avatars.githubusercontent.com/u/277739544?v=4))
 
 ## Hi there 👋
 
