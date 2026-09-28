@@ -1,3 +1,2 @@
-theme: none
-title: FS-DLH's homepage
-description: Bookmark this to keep an eye on my project updates!
+baseurl: ""
+url: "https://fs-dlh.github.io"
